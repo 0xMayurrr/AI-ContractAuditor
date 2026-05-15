@@ -1,0 +1,73 @@
+{
+  "name": "smart-audit",
+  "displayName": "SMART_AUDIT",
+  "description": "AI-powered smart contract auditor. Detects vulnerabilities, scores security, and auto-generates fixed code. MCP-ready API for AI agents and CreateOS Skills.",
+  "version": "1.0.0",
+  "type": "skill",
+  "category": "security",
+  "tags": ["solidity", "smart-contracts", "security", "audit", "ai", "mcp", "web3"],
+  "framework": "nextjs",
+  "runtime": "nodejs",
+  "buildCommand": "npm run build",
+  "startCommand": "npm start",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
+  "nodeVersion": "20",
+  "env": {
+    "OPENAI_API_KEY": {
+      "required": false,
+      "description": "Optional: Enables AI-enhanced vulnerability explanations via OpenAI"
+    },
+    "OPENAI_MODEL": {
+      "required": false,
+      "default": "gpt-4o-mini",
+      "description": "OpenAI model to use for AI enrichment"
+    },
+    "NEXT_PUBLIC_ETHERSCAN_API_KEY": {
+      "required": false,
+      "description": "Optional: Enables fetching contracts by address from Etherscan"
+    }
+  },
+  "api": {
+    "endpoints": [
+      {
+        "method": "POST",
+        "path": "/api/audit",
+        "description": "Audit a Solidity smart contract. Returns security score, findings, and grade.",
+        "mcp": true,
+        "input": {
+          "code": "string — Solidity source code to audit"
+        },
+        "output": {
+          "securityScore": "number (0-100)",
+          "grade": "string (A-F)",
+          "findings": "array of vulnerability findings",
+          "aiEnhanced": "boolean"
+        }
+      }
+    ]
+  },
+  "mcp": {
+    "compatible": true,
+    "toolName": "smart_audit",
+    "toolDescription": "Audit Solidity smart contracts for security vulnerabilities. Returns a security score, letter grade, and detailed findings with recommendations.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Solidity smart contract source code to audit"
+        }
+      },
+      "required": ["code"]
+    }
+  },
+  "health": {
+    "path": "/api/env-status",
+    "interval": 30
+  },
+  "resources": {
+    "memory": "512mb",
+    "cpu": "0.5"
+  }
+}
