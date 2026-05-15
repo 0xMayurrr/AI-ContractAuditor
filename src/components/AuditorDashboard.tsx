@@ -204,8 +204,14 @@ export function AuditorDashboard() {
             <Link href="/api-docs" className="font-jetbrains text-[13px] font-medium text-[#bbcabf] transition-colors hover:text-[#4edea3]">API</Link>
             <Link href="/docs" className="font-jetbrains text-[13px] font-medium text-[#bbcabf] transition-colors hover:text-[#4edea3]">Docs</Link>
             <Link href="/history" className="font-jetbrains text-[13px] font-medium text-[#bbcabf] transition-colors hover:text-[#4edea3]">History</Link>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="font-jetbrains text-[13px] font-medium text-[#bbcabf] transition-colors hover:text-[#4edea3]">
+            <a
+              href="https://github.com/0xMayurrr/AI-ContractAuditor"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 font-jetbrains text-[13px] font-medium text-[#bbcabf] transition-colors hover:text-[#4edea3]"
+            >
               <Github className="h-4 w-4" />
+              GitHub
             </a>
           </nav>
         </div>
@@ -463,17 +469,21 @@ export function AuditorDashboard() {
           FOOTER — fixed bottom
       ══════════════════════════════════════════ */}
       <footer className="fixed bottom-0 left-0 z-40 flex w-full items-center justify-between border-t border-[#262626] bg-[#0e0e0e] px-8 py-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <span className="font-jetbrains text-[11px] uppercase tracking-widest text-[#86948a]">
-            © 2024 SMART_AUDIT. AI-POWERED SECURITY.
+            © 2025 SMART_AUDIT
+          </span>
+          <span className="text-[#262626]">·</span>
+          <span className="font-jetbrains text-[11px] text-[#4edea3]/60">
+            Built for the NodeOps / CreateOS Builder Challenge
           </span>
         </div>
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           <Link href="/" className="font-jetbrains text-[11px] uppercase tracking-widest text-[#86948a] transition-colors hover:text-[#e5e2e1]">Editor</Link>
           <Link href="/api-docs" className="font-jetbrains text-[11px] uppercase tracking-widest text-[#86948a] transition-colors hover:text-[#e5e2e1]">API</Link>
           <Link href="/docs" className="font-jetbrains text-[11px] uppercase tracking-widest text-[#86948a] transition-colors hover:text-[#e5e2e1]">Docs</Link>
           <Link href="/history" className="font-jetbrains text-[11px] uppercase tracking-widest text-[#86948a] transition-colors hover:text-[#e5e2e1]">History</Link>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="font-jetbrains text-[11px] uppercase tracking-widest text-[#86948a] transition-colors hover:text-[#e5e2e1]">GitHub</a>
+          <a href="https://github.com/0xMayurrr/AI-ContractAuditor" target="_blank" rel="noreferrer" className="font-jetbrains text-[11px] uppercase tracking-widest text-[#86948a] transition-colors hover:text-[#e5e2e1]">GitHub</a>
         </div>
       </footer>
       
